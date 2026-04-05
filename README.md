@@ -73,6 +73,21 @@ Project file
 
 ```
 
+# How to run
 run with given test input
 g++ -std=c++17 src/main.cpp -o hvlcs
-./hvlcs < data/example.in
+Get-Content data/input_.in | ./hvlcs
+
+# Question 1:
+
+# Question 2: 
+Recurrence equation
+
+![Recurrence](experiments/OverLeaf_Algo%20DP_P3_Q2.png)
+
+- Base case: If either string is empty, the value is 0.
+- Case 1: If A[i] = B[j], we consider including the character or skipping from either string.
+- Case 2: If A[i] ≠ B[j], we skip one character from either string.
+
+
+# Question 3:
