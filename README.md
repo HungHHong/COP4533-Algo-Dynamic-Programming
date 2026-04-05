@@ -86,8 +86,8 @@ g++ main.cpp -o main
 input1.in trough input10.in are all non trivial input files that we randomly generated. These files varied in input size, by having different alphabet lengths, lengths of A and lengths of B. We were able to use the main to solve these input files and get their running times for each in respect to length of A * length of B.
 
 ![Recurrence](experiments/graph.png)
-The above graph shows that the run time of the algorithm should be O(M*N) as the graph is linear, where M is the size of string A, and N is the size of string B.
 
+The above graph shows that the run time of the algorithm should be O(M*N) as the graph is linear, where M is the size of string A, and N is the size of string B.
 
 # Question 2: 
 Recurrence equation:
