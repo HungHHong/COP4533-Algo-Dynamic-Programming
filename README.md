@@ -75,6 +75,10 @@ Get-Content data/input_.in | ./hvlcs
 
 # Question 1:
 
+input1.in trough input10.in are all non trivial input files that we randomly generated. These files varied in input size, by having different alphabet lengths, lengths of A and lengths of B. We were able to use the main to solve these input files and get their running times for each in respect to length of A * length of B.
+
+![Recurrence](experiments/graph.png)
+
 # Question 2: 
 Recurrence equation:
 
