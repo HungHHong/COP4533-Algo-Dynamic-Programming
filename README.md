@@ -51,11 +51,7 @@ Project file
 │
 ├── src/     
 │   ├── main.cpp
-│   ├── dp_solver.cpp
-│   ├── dp_solver.h
-│   ├── reconstruct.cpp
-│   ├── reconstruct.h
-│   └── parser.cpp
+│   └── dp_solver.cpp
 │
 ├── data/               # Input files
 │   ├── example.in
