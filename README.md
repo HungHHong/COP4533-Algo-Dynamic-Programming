@@ -73,4 +73,6 @@ Project file
 
 ```
 
-
+run with given test input
+g++ -std=c++17 src/main.cpp -o hvlcs
+./hvlcs < data/example.in
