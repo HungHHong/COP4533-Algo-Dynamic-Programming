@@ -76,13 +76,32 @@ Get-Content data/input_.in | ./hvlcs
 # Question 1:
 
 # Question 2: 
-Recurrence equation
+Recurrence equation:
 
 ![Recurrence](experiments/OverLeaf_Algo%20DP_P3_Q2.png)
+
+The recurrence defines OPT(i,j) as maximum value of a common subsequence between the first i characters of string A and the first j characters of string B.
 
 - Base case: If either string is empty, the value is 0.
 - Case 1: If A[i] = B[j], we consider including the character or skipping from either string.
 - Case 2: If A[i] ≠ B[j], we skip one character from either string.
 
+This ensure that all possible choices are considered before and while avoiding recompute through dynamic programming
+
+### Why our recurrence is correct
+This recurrence works because the problem has optimal substructure, meaning we can build the optimal solution from smaller subproblems.
+
+- Base case: If either string is empty, then there is no common subsequence, so the value is 0.
+- Case 1: If `A[i] = B[j]`, then we have a choice:
+  - we can include this character in our subsequence, which adds `v(A[i])` plus the best result from the smaller problem `OPT(i-1, j-1)`, or  
+  - we can skip one of the characters and rely on previous results (`OPT(i-1, j)` or `OPT(i, j-1)`).
+
+
+- Case 2: If `A[i] ≠ B[j]`, , then we cannot match these two characters, so we must skip one of them: 
+  - `A[i]` → `OPT(i-1, j)`  
+  or
+  - `B[j]` → `OPT(i, j-1)`
+
+Since these cases cover all possible valid choices, and each choice reduces to smaller subproblems, taking the maximum ensures we always get the best possible value. Hence it should be `OPT`
 
 # Question 3:
