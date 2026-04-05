@@ -6,37 +6,50 @@
 #include <string>  
 #include <utility>  
 
-
 # include "dp_solver.cpp"
 
 using namespace std;
 
 int main(){
+    for(int f = 1; f<11; f++){
 
-    // Num of characters in alphabet
-    int k;
+        string inFile = "../data/input" + to_string(f)+".in";
+        string outFile = "../data/output" + to_string(f) + ".txt";
 
-    cin >> k;
+        ifstream in(inFile);
+        if (!in.is_open()) {
+            cout << "Could not open " << inFile << "\n";
+            continue;
+        }
 
-    unordered_map<char,long long> mp;
+        // Num of characters in alphabet
+        int k;
 
-    while(k-->0){
-        char c;
-        long long v;
-        cin >> c >> v;
+        in >> k;
 
-        mp[c] = v;
+        unordered_map<char,long long> mp;
+
+        while(k-->0){
+            char c;
+            long long v;
+            in >> c >> v;
+
+            mp[c] = v;
+        }
+
+        string a, b;
+
+        in >> a >> b;
+
+        pair<long long,string> ans = dp_solution(a,b,mp);
+
+        ofstream out(outFile);
+        out << ans.first << endl;
+        out << ans.second << endl;
+
+        cout << "Generated " << outFile << "\n";
+    
     }
-
-    string a, b;
-
-    cin >> a >> b;
-
-    pair<long long,string> ans = dp_solution(a,b,mp);
-
-    cout << ans.first << endl;
-    cout << ans.second << endl;
-
     return 0;
 
 }
