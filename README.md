@@ -7,8 +7,8 @@
     * Thyssen Nicholas (UFID: 19705329)
 
 **Contributions**
-- Part A (Matcher): Hung Hong  
-- Part B (Verifier): Thyssen Nicholas  
+Hung Hong: DP_Solver
+Thyssen Nicholas: main, generator
 
 
 ## Overview
@@ -53,23 +53,18 @@ Project file
 │   ├── main.cpp
 │   └── dp_solver.cpp
 │
-├── data/               # Input files
+├── data/               # Input/output files
 │   ├── example.in
-│   ├── test1.in
-│   ├── test2.in
+│   ├── input[#].in
+│   ├── output[#].out
 │   └── ...
 │
-├── result/             # Output files
-│   ├── example.out
-│   ├── test1.out
-│   └── ...
-│
-├── experiments/  
+├── experiments/       # Data from Exeriments
 │   ├── runtimes.csv
 │   └── graph.png
 │
-├── README.md
-└── Makefile
+└── README.md
+
 
 ```
 
