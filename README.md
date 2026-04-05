@@ -76,9 +76,11 @@ Project file
 # How to run
 To run all the inputs and create the graph data use the following code in the project folder directory in the terminal:
 
+```
 cd src
 g++ main.cpp -o main
 ./main
+```
 
 # Question 1:
 
