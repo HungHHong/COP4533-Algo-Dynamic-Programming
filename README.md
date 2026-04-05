@@ -7,8 +7,8 @@
     * Thyssen Nicholas (UFID: 19705329)
 
 **Contributions:**
-- Hung Hong: DP_Solver
-- Thyssen Nicholas: main, generator
+- Hung Hong: DP_Solver, Questions 2 and 3
+- Thyssen Nicholas: main, generator, Question 1
 
 
 ## Overview
@@ -49,15 +49,20 @@ Project file
 │
 ├── src/     
 │   ├── main.cpp
+│   ├── generate_input.cpp
 │   └── dp_solver.cpp
 │
 ├── data/               # Input/output files
 │   ├── example.in
+│   ├── example.out
 │   ├── input[#].in
-│   ├── output[#].out
+│   ├── output[#].txt
 │   └── ...
 │
 ├── experiments/       # Data from Exeriments
+│   ├── runtimes.csv
+│   ├── Hong_Original_Write_Up.png # Original work for question 2
+│   ├── OverLeaf_Algo DP_P3_Q2.png # Recur Equation
 │   ├── runtimes.csv
 │   └── graph.png
 │
@@ -67,10 +72,11 @@ Project file
 ```
 
 # How to run
-run with given test input
+To run all the inputs and create the graph data use the following code in the project folder directory in the terminal:
 ```
-g++ -std=c++17 src/main.cpp -o hvlcs
-Get-Content data/input[#].in | ./hvlcs
+cd src
+g++ main.cpp -o main
+./main
 ```
 
 
@@ -80,6 +86,8 @@ Get-Content data/input[#].in | ./hvlcs
 input1.in trough input10.in are all non trivial input files that we randomly generated. These files varied in input size, by having different alphabet lengths, lengths of A and lengths of B. We were able to use the main to solve these input files and get their running times for each in respect to length of A * length of B.
 
 ![Recurrence](experiments/graph.png)
+The above graph shows that the run time of the algorithm should be O(M*N) as the graph is linear, where M is the size of string A, and N is the size of string B.
+
 
 # Question 2: 
 Recurrence equation:
