@@ -83,10 +83,12 @@ DP_solver(A, B, v):
     // Fill table bottom-up approach
     for i = 1 to m:
         for j = 1 to n:
+            //Case 1: match
             if A[i] = B[j]:
                 M[i, j] = max(v(A[i]) + M[i-1, j-1],
                               M[i-1, j],
                               M[i, j-1])
+            //Case 2: not match
             else:
                 M[i, j] = max(M[i-1, j], M[i, j-1])
 

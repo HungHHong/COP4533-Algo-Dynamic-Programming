@@ -6,9 +6,9 @@
     * Hung Hong (UFID: 56253262)
     * Thyssen Nicholas (UFID: 19705329)
 
-**Contributions**
-Hung Hong: DP_Solver
-Thyssen Nicholas: main, generator
+**Contributions:**
+- Hung Hong: DP_Solver
+- Thyssen Nicholas: main, generator
 
 
 ## Overview
@@ -28,6 +28,7 @@ Thyssen Nicholas: main, generator
 - Handle match vs skip
 
 ## Experiments
+- Test with given in/output first
 - 10+ test cases
 - Strings length ≥ 25
 - Measure runtime
@@ -39,9 +40,6 @@ Thyssen Nicholas: main, generator
 - Pseudocode
 - Time complexity
 
-## Files
-- Example input/output
-- Test inputs
 
 
 
@@ -70,8 +68,12 @@ Project file
 
 # How to run
 run with given test input
+```
 g++ -std=c++17 src/main.cpp -o hvlcs
-Get-Content data/input_.in | ./hvlcs
+Get-Content data/input[#].in | ./hvlcs
+```
+
+
 
 # Question 1:
 
@@ -109,3 +111,41 @@ This recurrence works because the problem has optimal substructure, meaning we c
 Since these cases cover all possible valid choices, and each choice reduces to smaller subproblems, taking the maximum ensures we always get the best possible value. Hence it should be `OPT`
 
 # Question 3:
+
+```
+/* original Pseudocode implementation:
+
+DP_solver(A, B, v):
+    m = length(A), n = length(B)
+
+    // Initialize base cases
+    for i = 0 to m:  M[i, 0] = 0
+    for j = 0 to n:  M[0, j] = 0
+
+    // Fill table bottom-up approach
+    for i = 1 to m:
+        for j = 1 to n:
+            //Case 1: match
+            if A[i] = B[j]:
+                M[i, j] = max(v(A[i]) + M[i-1, j-1],
+                              M[i-1, j],
+                              M[i, j-1])
+            //Case 2: not match
+            else:
+                M[i, j] = max(M[i-1, j], M[i, j-1])
+
+    return M[m, n]
+
+*/
+```
+This algorithm computes the maximum value of the HVLCS using a bottom-up approach in dynamic programming.
+
+### Runtime
+
+The algorithm fills an (m+1) × (n+1) table.
+
+- There are m × n entries in the table.
+- Each entry is computed in constant time O(1).
+
+Therefore, the total runtime is O(M*N).
+and our space is O(M*N).
